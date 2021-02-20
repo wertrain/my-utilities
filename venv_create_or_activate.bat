@@ -5,7 +5,7 @@ echo off
 setlocal
 cd /d %~dp0
 :: 仮想環境名
-set VENV_NAME= .venv
+set VENV_NAME=venv
 
 if not exist %VENV_NAME% goto CREATEVENV
 goto ACTIVATE
@@ -14,6 +14,6 @@ goto ACTIVATE
 py -m venv %VENV_NAME%
 
 :ACTIVATE
-cmd /k .venv\Scripts\activate.bat
+cmd /k %VENV_NAME%\Scripts\activate.bat
 
 endlocal
